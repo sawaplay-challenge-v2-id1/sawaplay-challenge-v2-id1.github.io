@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <script>
+        function g(variable) {
+          var query = window.location.search.substring(1);
+          var vars = query.split('&');
+          for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split('=');
+            if (pair[0] == variable) {
+              return pair[1];
+            }
+          }
+          return false;
+        }
+        function i() {
+          return g('is_open_sptu') && g('sptu_opened');
+        }
+        function s() {
+          if (i()) {
+            document.documentElement.classList.add('-sptu');
+          }
+        }
+        s();
+      </script>
+      
+
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" id="viewport-config" />
+    <title></title>
+    
+  </head>
+  <body id="body">
+    <div id="app"></div>
+    <script crossorigin id="vite-legacy-polyfill" src="./assets/polyfills-legacy-DXnQns4q.js"></script>
+    <script crossorigin id="vite-legacy-entry" data-src="./assets/share-legacy-BzT8vTxx.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+  </body>
+</html>
